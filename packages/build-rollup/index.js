@@ -19,10 +19,11 @@ const packagesPath = path.join(__dirname, '../packages')
 export function rollupConfigure(pkg, options = {
   target: 'es',
   useTypescript: true,
-  useVue: false
+  useVue: false,
+  exports: 'named'
 }) {
   let {name, dependencies} = pkg
-  const {target, useTypescript, useVue} = options
+  const {target, useTypescript, useVue, exports} = options
 
   // solve namespace
   if(name.startsWith('@')) {
@@ -84,7 +85,7 @@ export function rollupConfigure(pkg, options = {
       output: {
         file: path.resolve(rootDir, `dist/index.${target}.js`),
         format: target,
-        exports: 'named',
+        exports,
         sourcemap: true
       }
     }

@@ -17,7 +17,7 @@ const merge = (local, remote) => {
   return local
 }
 
-module.exports= function(options = {
+module.exports = function(options = {
   lib: '',
   envConfig: {}
 }, configure = {}) {

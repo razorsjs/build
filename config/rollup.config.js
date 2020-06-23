@@ -5,7 +5,8 @@ import babelBuild from '../packages/build-babel/package.json'
 export default [
   rollupConfigure(babelBuild, {
     target: 'cjs',
-    useTypescript: false
+    useTypescript: false,
+    named: 'default'
   }),
   rollupConfigure(rollupBuild, {
     target: 'cjs',
