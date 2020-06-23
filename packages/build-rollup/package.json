@@ -1,0 +1,19 @@
+{
+  "name": "@razors/build-rollup",
+  "version": "0.0.0",
+  "main": "index.cjs.js",
+  "module": "index.cjs.js",
+  "license": "MIT",
+  "dependencies": {
+    "@rollup/plugin-babel": "^5.0.4",
+    "@rollup/plugin-commonjs": "^13.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^8.1.0",
+    "rollup": "^2.18.0",
+    "rollup-plugin-css-only": "^2.1.0",
+    "rollup-plugin-node-externals": "^2.2.0",
+    "rollup-plugin-typescript2": "^0.27.1",
+    "rollup-plugin-vue": "5.1.9",
+    "vue-template-compiler": "^2.6.11"
+  }
+}

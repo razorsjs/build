@@ -1,0 +1,10 @@
+{
+  "name": "@razors/build-babel",
+  "version": "0.0.0",
+  "main": "index.cjs.js",
+  "module": "index.cjs.js",
+  "license": "MIT",
+  "dependencies": {
+    "@vue/babel-preset-app": "^4.4.5"
+  }
+}
