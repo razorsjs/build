@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "name": "razors-build-packages",
+  "workspaces": [
+    "packages/*"
+  ],
+  "repository": "https://github.com/razorsjs/build.git",
+  "author": "liujia02 <bit_liujia@163.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "commitizen": "^4.1.2",
+    "lerna": "^3.22.1"
+  },
+  "scripts": {
+    "commit": "git add . && git-cz"
+  }
+}
