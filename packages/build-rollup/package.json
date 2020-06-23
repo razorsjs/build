@@ -1,9 +1,11 @@
 {
   "name": "@razors/build-rollup",
   "version": "0.0.1",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.cjs.js",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.cjs.js",
   "license": "MIT",
+  "repository": "https://github.com/razorsjs/build",
+  "author": "liujia02 <bit_liujia@163.com>",
   "dependencies": {
     "@rollup/plugin-babel": "^5.0.4",
     "@rollup/plugin-commonjs": "^13.0.0",

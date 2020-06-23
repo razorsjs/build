@@ -1,10 +1,12 @@
 {
   "name": "@razors/build-babel",
   "version": "0.0.1",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.cjs.js",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.cjs.js",
   "license": "MIT",
   "dependencies": {
     "@vue/babel-preset-app": "^4.4.5"
-  }
+  },
+  "repository": "https://github.com/razorsjs/build",
+  "author": "liujia02 <bit_liujia@163.com>"
 }
