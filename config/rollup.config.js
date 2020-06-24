@@ -1,6 +1,7 @@
 import {rollupConfigure} from '../packages/build-rollup/index';
 import rollupBuild from '../packages/build-rollup/package.json';
-import babelBuild from '../packages/build-babel/package.json'
+import babelBuild from '../packages/build-babel/package.json';
+import jestBuild from '../packages/build-jest/package.json'
 
 export default [
   rollupConfigure(babelBuild, {
@@ -9,6 +10,10 @@ export default [
     named: 'default'
   }),
   rollupConfigure(rollupBuild, {
+    target: 'cjs',
+    useTypescript: false
+  }),
+  rollupConfigure(jestBuild, {
     target: 'cjs',
     useTypescript: false
   }),
