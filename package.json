@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "razors-build-packages",
+  "name": "@razors/build-packages",
   "workspaces": [
     "packages/*"
   ],
