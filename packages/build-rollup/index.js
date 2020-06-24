@@ -16,14 +16,50 @@ import externals from 'rollup-plugin-node-externals'
 
 const packagesPath = path.join(__dirname, '../packages')
 
-export function rollupConfigure(pkg, options = {
+const isObject = (o) => {
+  Object.prototype.toString.call(o) === '[Object Object]'
+}
+
+// merge options for babel, etc..
+const merge = (origin, remote) =>{
+  const result = {}
+  Object.keys(origin).forEach(key => {
+    if(remote[key]) {
+      const o = origin[key]
+      const r = remote[key]
+      // only object and array need handled
+      if(Array.isArray(o) && Array.isArray(r)) {
+        result[key] = o.concat(r)
+      } else if(isObject(o) && isObject(r)) {
+        result[key] = merge(o, r)
+      } else {
+        result[key] = origin[key]
+      }
+    } else {
+      result[key] = origin[key]
+    }
+  })
+  Object.keys(remote).forEach(key => {
+    if(!origin[key]) {
+      result[key] = remote[key]
+    }
+  })
+  return result
+}
+
+export default function(pkg, options = {
   target: 'es',
+  // use ts
   useTypescript: true,
+  // use SFC vue
   useVue: false,
   exports: 'named'
+}, pluginOptions= {
+  babel: {}
 }) {
   let {name, dependencies} = pkg
   const {target, useTypescript, useVue, exports} = options
+  const {babel: babelOptions} = pluginOptions
 
   // solve namespace
   if(name.startsWith('@')) {
@@ -43,7 +79,7 @@ export function rollupConfigure(pkg, options = {
     ],
   }
 
-  const resolveOptions = {
+  const _resolveOptions = {
     extensions: []
   }
 
@@ -52,8 +88,14 @@ export function rollupConfigure(pkg, options = {
   ];
 
   if(useVue) {
-    resolveOptions.extensions.push('.vue')
+    _resolveOptions.extensions.push('.vue')
     presets[0][0] = '@vue/babel-preset-app'
+  }
+
+  const _babelOptions = {
+    babelHelpers: 'bundled',
+    extensions: ['.vue', '.js', '.tsx', '.ts'],
+    presets,
   }
 
   const plugins = [
@@ -62,17 +104,13 @@ export function rollupConfigure(pkg, options = {
       builtins: true
     }),
     useVue ? css() : null,
-    resolve(resolveOptions),
+    resolve(_resolveOptions),
     useTypescript ? typescript({
       exclude: "node_modules/**"
     }) : null,
     commonjs(),
     useVue ? VuePlugin({css: false}) : null,
-    babel({
-      babelHelpers: 'bundled',
-      extensions: ['.vue', '.js'],
-      presets,
-    })
+    babel(merge(_babelOptions, babelOptions))
   ]
   const input = path.join(rootDir, useTypescript ?'index.ts' :'index.js')
   const external = Object.keys(dependencies)

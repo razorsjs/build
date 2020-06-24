@@ -11,7 +11,8 @@ export default [
   }),
   rollupConfigure(rollupBuild, {
     target: 'cjs',
-    useTypescript: false
+    useTypescript: false,
+    named: 'default'
   }),
   rollupConfigure(jestBuild, {
     target: 'cjs',
