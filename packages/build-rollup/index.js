@@ -90,15 +90,16 @@ export default function(pkg, options = defaultOptions, pluginOptions= {
       ["@babel/preset-env", babelPresetOptions]
   ];
 
-  if(useVue) {
-    _resolveOptions.extensions.push('.vue')
-    presets[0][0] = '@vue/babel-preset-app'
-  }
-
   const _babelOptions = {
     babelHelpers: 'bundled',
-    extensions: ['.vue', '.js', '.tsx', '.ts'],
+    extensions: ['.js', '.tsx', '.ts'],
     presets,
+  }
+
+  if(useVue) {
+    _resolveOptions.extensions.push('.vue')
+    _babelOptions.extensions.push('.vue')
+    presets[0][0] = '@vue/babel-preset-app'
   }
 
   const plugins = [
