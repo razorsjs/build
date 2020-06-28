@@ -64,6 +64,8 @@ export default function(pkg, options = defaultOptions, pluginOptions= {
   const {target, useTypescript, useVue, exports} = options
   const {babel: babelOptions} = pluginOptions
 
+  //TODO: check tsconfig.json
+
   // solve namespace
   if(name.startsWith('@')) {
     name = name.split('/')[1]
@@ -91,6 +93,8 @@ export default function(pkg, options = defaultOptions, pluginOptions= {
   ];
 
   const _babelOptions = {
+    babelrc: false,
+    configFile: false,
     babelHelpers: 'bundled',
     extensions: ['.js', '.tsx', '.ts'],
     presets,
@@ -119,7 +123,7 @@ export default function(pkg, options = defaultOptions, pluginOptions= {
     babel(merge(_babelOptions, babelOptions))
   ]
   const input = path.join(rootDir, useTypescript ?'index.ts' :'index.js')
-  const external = Object.keys(dependencies)
+  const external = dependencies ? Object.keys(dependencies) : []
 
   if(isCjs) {
     return {
