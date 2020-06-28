@@ -109,7 +109,9 @@ export default function(pkg, options = defaultOptions, pluginOptions= {
     useVue ? css() : null,
     resolve(_resolveOptions),
     useTypescript ? typescript({
-      exclude: "node_modules/**"
+      exclude: "node_modules/**",
+      // find tsconfig in every package
+      tsconfig: path.join(rootDir, 'tsconfig.json')
     }) : null,
     commonjs(),
     useVue ? VuePlugin({css: false}) : null,
