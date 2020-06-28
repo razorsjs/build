@@ -14,7 +14,7 @@ import css from 'rollup-plugin-css-only'
 // node externals
 import externals from 'rollup-plugin-node-externals'
 
-const packagesPath = path.join(__dirname, '../packages')
+const packagesPath = path.join(process.cwd(), './packages')
 
 const isObject = (o) => {
   Object.prototype.toString.call(o) === '[Object Object]'
@@ -24,7 +24,7 @@ const isObject = (o) => {
 const merge = (origin, remote) =>{
   const result = {}
   Object.keys(origin).forEach(key => {
-    if(remote[key]) {
+    if(remote[key] !== undefined) {
       const o = origin[key]
       const r = remote[key]
       // only object and array need handled
@@ -33,7 +33,7 @@ const merge = (origin, remote) =>{
       } else if(isObject(o) && isObject(r)) {
         result[key] = merge(o, r)
       } else {
-        result[key] = origin[key]
+        result[key] = remote[key]
       }
     } else {
       result[key] = origin[key]
@@ -47,16 +47,19 @@ const merge = (origin, remote) =>{
   return result
 }
 
-export default function(pkg, options = {
+const defaultOptions = {
   target: 'es',
   // use ts
   useTypescript: true,
   // use SFC vue
   useVue: false,
   exports: 'named'
-}, pluginOptions= {
+}
+
+export default function(pkg, options = defaultOptions, pluginOptions= {
   babel: {}
 }) {
+  options = merge(defaultOptions, options)
   let {name, dependencies} = pkg
   const {target, useTypescript, useVue, exports} = options
   const {babel: babelOptions} = pluginOptions

@@ -7,15 +7,16 @@ export default [
   rollupConfigure(babelBuild, {
     target: 'cjs',
     useTypescript: false,
-    named: 'default'
+    exports: 'default'
   }),
   rollupConfigure(rollupBuild, {
     target: 'cjs',
     useTypescript: false,
-    named: 'default'
+    exports: 'default'
   }),
   rollupConfigure(jestBuild, {
     target: 'cjs',
-    useTypescript: false
+    useTypescript: false,
+    exports: 'default'
   }),
 ]
