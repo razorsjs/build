@@ -1,18 +1,24 @@
-// This is for sdk
+// common plugin
 import path from "path"
 import typescript from "rollup-plugin-typescript2";
 import babel from '@rollup/plugin-babel'
 import commonjs from '@rollup/plugin-commonjs'
+// for .json
+import json from '@rollup/plugin-json';
+// node externals
+import externals from 'rollup-plugin-node-externals'
+// preserve-shebang for: #!/usr/bin/env node
+import shebang from 'rollup-plugin-preserve-shebang';
+
+/**
+ * for vue sfc
+ */
 // for SFC loader
 import VuePlugin from 'rollup-plugin-vue'
 // for resolve .vue
 import resolve from '@rollup/plugin-node-resolve'
-// fro .json
-import json from '@rollup/plugin-json';
-// extract css
+// extract css for vue SFC
 import css from 'rollup-plugin-css-only'
-// node externals
-import externals from 'rollup-plugin-node-externals'
 
 const packagesPath = path.join(process.cwd(), './packages')
 
@@ -108,6 +114,7 @@ export default function(pkg, options = defaultOptions, pluginOptions= {
 
   const plugins = [
     json(),
+    shebang(),
     externals({
       builtins: true
     }),

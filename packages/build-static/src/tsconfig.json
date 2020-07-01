@@ -6,12 +6,12 @@
     "moduleResolution": "node",
     "declaration": true,
     "declarationMap": true,
-    "exclude": [
-      "node_modules"
-    ],
     "strict": false,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "importHelpers": true
-  }
+  },
+  "exclude": [
+    "node_modules"
+  ]
 }

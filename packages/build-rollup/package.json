@@ -14,6 +14,7 @@
     "rollup": "^2.18.0",
     "rollup-plugin-css-only": "^2.1.0",
     "rollup-plugin-node-externals": "^2.2.0",
+    "rollup-plugin-preserve-shebang": "^1.0.1",
     "rollup-plugin-typescript2": "^0.27.1",
     "rollup-plugin-vue": "5.1.9",
     "vue-template-compiler": "^2.6.11"
