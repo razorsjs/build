@@ -60,7 +60,7 @@ const defaultOptions = {
   // use SFC vue
   useVue: false,
   exports: 'named',
-  external: {}
+  external: []
 }
 
 export default function(pkg, options = defaultOptions, pluginOptions= {
@@ -132,7 +132,7 @@ export default function(pkg, options = defaultOptions, pluginOptions= {
   ]
   const input = path.join(rootDir, useTypescript ?'index.ts' :'index.js')
   let external = dependencies ? Object.keys(dependencies) : []
-  external = merge(external, options.external)
+  external = external.concat(options.external)
 
   if(isCjs) {
     return {
