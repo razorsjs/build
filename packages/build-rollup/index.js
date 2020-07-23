@@ -59,7 +59,8 @@ const defaultOptions = {
   useTypescript: true,
   // use SFC vue
   useVue: false,
-  exports: 'named'
+  exports: 'named',
+  external: {}
 }
 
 export default function(pkg, options = defaultOptions, pluginOptions= {
@@ -130,7 +131,8 @@ export default function(pkg, options = defaultOptions, pluginOptions= {
     babel(merge(_babelOptions, babelOptions))
   ]
   const input = path.join(rootDir, useTypescript ?'index.ts' :'index.js')
-  const external = dependencies ? Object.keys(dependencies) : []
+  let external = dependencies ? Object.keys(dependencies) : []
+  external = merge(external, options.external)
 
   if(isCjs) {
     return {

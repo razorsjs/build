@@ -8,5 +8,9 @@
   "author": "liujia02 <bit_liujia@163.com>",
   "bin": {
     "bs": "dist/index.cjs.js"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "commander": "^5.1.0"
   }
 }
