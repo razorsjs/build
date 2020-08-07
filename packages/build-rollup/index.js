@@ -130,7 +130,12 @@ export default function(pkg, options = defaultOptions, pluginOptions= {
     useVue ? VuePlugin({css: false}) : null,
     babel(merge(_babelOptions, babelOptions))
   ]
-  const input = path.join(rootDir, useTypescript ?'index.ts' :'index.js')
+  const defaultInput = useTypescript ?'index.ts' :'index.js'
+  const defaultOutput = `index.${target}.js`
+
+  const input = path.join(rootDir, options.input ? options.input : defaultInput)
+  const output = path.resolve(rootDir, `dist/${ options.output ? options.output : defaultOutput}`)
+
   let external = dependencies ? Object.keys(dependencies) : []
   external = external.concat(options.external)
 
@@ -140,7 +145,7 @@ export default function(pkg, options = defaultOptions, pluginOptions= {
       input,
       external,
       output: {
-        file: path.resolve(rootDir, `dist/index.${target}.js`),
+        file: output,
         format: target,
         exports,
         sourcemap: true
@@ -154,7 +159,7 @@ export default function(pkg, options = defaultOptions, pluginOptions= {
       input,
       external,
       output: {
-        file: path.resolve(rootDir, `dist/index.${target}.js`),
+        file: output,
         format: target,
         sourcemap: true
       }
