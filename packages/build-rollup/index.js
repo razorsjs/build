@@ -11,7 +11,6 @@ import externals from 'rollup-plugin-node-externals'
 import shebang from 'rollup-plugin-preserve-shebang';
 // minify generated es bundle
 import { terser } from "rollup-plugin-terser";
-
 /**
  * for vue sfc
  */
