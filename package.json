@@ -1,9 +1,7 @@
 {
   "private": true,
   "name": "@razors/build-packages",
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": ["packages/*"],
   "repository": "https://github.com/razorsjs/build.git",
   "author": "liujia02 <bit_liujia@163.com>",
   "license": "MIT",
@@ -11,11 +9,13 @@
     "commitizen": "^4.1.2",
     "cz-conventional-changelog": "^3.2.0",
     "lerna": "^3.22.1",
+    "shipjs": "0.20.1",
     "typescript": "^3.9.5"
   },
   "scripts": {
     "commit": "git add . && git-cz",
-    "build": "rollup --config config/rollup.config.js"
+    "build": "rollup --config config/rollup.config.js",
+    "release": "shipjs prepare"
   },
   "config": {
     "commitizen": {
