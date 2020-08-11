@@ -9,6 +9,8 @@ import json from '@rollup/plugin-json';
 import externals from 'rollup-plugin-node-externals'
 // preserve-shebang for: #!/usr/bin/env node
 import shebang from 'rollup-plugin-preserve-shebang';
+// minify generated es bundle
+import { terser } from "rollup-plugin-terser";
 
 /**
  * for vue sfc
@@ -128,7 +130,8 @@ export default function(pkg, options = defaultOptions, pluginOptions= {
     }) : null,
     commonjs(),
     useVue ? VuePlugin({css: false}) : null,
-    babel(merge(_babelOptions, babelOptions))
+    babel(merge(_babelOptions, babelOptions)),
+    terser()
   ]
   const defaultInput = useTypescript ?'index.ts' :'index.js'
   const defaultOutput = `index.${target}.js`
