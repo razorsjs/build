@@ -67,9 +67,8 @@ workflows:
                 - master
       - shipjs_trigger:
           filters:
-            branches:
-              only:
-                - master
             tags:
               only: /^v[0-9]+.[0-9]+.[0-9]/
+            branches:
+              ignore: /.*/
 
