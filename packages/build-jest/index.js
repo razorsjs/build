@@ -1,4 +1,4 @@
-export default function(options) {
+module.exports = function(options) {
   let localConfig = {}
   options = options || {}
   if(options.typescript) {
