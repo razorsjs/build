@@ -7,6 +7,15 @@
 
 
 
+# [](https://github.com/razorsjs/build/compare/v0.0.14...v) (2020-08-13)
+
+
+### Bug Fixes
+
+* **jest:** change es6 to cjs ([5679ef3](https://github.com/razorsjs/build/commit/5679ef37edc666ca717088fdb0c7a38a9ecd1585))
+
+
+
 # [](https://github.com/razorsjs/build/compare/v0.0.12...v) (2020-08-11)
 
 
