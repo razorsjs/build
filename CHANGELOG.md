@@ -1,3 +1,18 @@
+# [](https://github.com/razorsjs/build/compare/v0.0.16...v) (2020-08-20)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @rollup/plugin-node-resolve to v9 ([#12](https://github.com/razorsjs/build/issues/12)) ([d0ef6b8](https://github.com/razorsjs/build/commit/d0ef6b82dd3d2ce2fe9c08c6bb5f61c6a4f25473))
+
+
+### Features
+
+* **commit:** add build-commit ([1de7cb2](https://github.com/razorsjs/build/commit/1de7cb26870db80e82d0b6526436d2eb892c7325))
+* **static:** add editorconfig ([e2e407e](https://github.com/razorsjs/build/commit/e2e407e42b059b583438a6b415238d5cea9d5afd))
+
+
+
 # [](https://github.com/razorsjs/build/compare/v0.0.14...v) (2020-08-13)
 
 
