@@ -7,16 +7,16 @@
   "author": "liujia02 <bit_liujia@163.com>",
   "license": "MIT",
   "devDependencies": {
-    "@types/jest": "^26.0.9",
+    "@razors/build-commit": "*",
+    "@razors/build-jest": "*",
     "commitizen": "^4.1.2",
     "cz-conventional-changelog": "^3.2.0",
-    "jest": "^26.4.0",
     "lerna": "^3.22.1",
     "shipjs": "0.20.1",
     "typescript": "^3.9.5"
   },
   "scripts": {
-    "commit": "git add . && git-cz",
+    "commit": "rz-commit",
     "build": "rollup --config config/rollup.config.js",
     "release": "shipjs prepare",
     "test": "jest"

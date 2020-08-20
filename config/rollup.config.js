@@ -2,6 +2,7 @@ import rollupConfigure from '../packages/build-rollup/index';
 import rollupBuild from '../packages/build-rollup/package.json';
 import babelBuild from '../packages/build-babel/package.json';
 import jestBuild from '../packages/build-jest/package.json';
+import commitBuild from '../packages/build-commit/package.json'
 // import staticBuild from '../packages/build-static/package.json'
 
 export default [
@@ -19,6 +20,9 @@ export default [
     target: 'cjs',
     useTypescript: false,
     exports: 'default'
+  }),
+  rollupConfigure(commitBuild, {
+    target: 'cjs'
   }),
   // rollupConfigure(staticBuild, {
   //   target: 'cjs',

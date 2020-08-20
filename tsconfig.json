@@ -1,17 +1,14 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es2019",
     "module": "esnext",
-    "jsx": "preserve",
-    "moduleResolution": "node",
-    "declaration": true,
-    "declarationMap": true,
-    "exclude": [
-      "node_modules"
-    ],
     "strict": false,
+    "jsx": "preserve",
+    "jsxFactory": "VueTsxSupport",
+    "importHelpers": true,
+    "moduleResolution": "node",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "importHelpers": true
+//    "declaration": true
   }
 }

@@ -5,5 +5,22 @@
   "module": "./dist/index.cjs.js",
   "license": "MIT",
   "repository": "https://github.com/razorsjs/build",
-  "author": "liujia02 <bit_liujia@163.com>"
+  "author": "liujia02 <bit_liujia@163.com>",
+  "bin": {
+    "rz-commit": "dist/index.cjs.js"
+  },
+  "dependencies": {
+    "commitizen": "^4.1.2",
+    "cz-conventional-changelog": "^3.2.0",
+    "execa": "^4.0.3",
+    "shelljs": "^0.8.4"
+  },
+  "devDependencies": {
+    "@types/shelljs": "^0.8.8"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
 }
