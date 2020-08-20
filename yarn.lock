@@ -1887,6 +1887,10 @@
   dependencies:
     "@types/node" ">= 8"
 
+"@razors/build-commit@^0.0.16":
+  version "0.0.16"
+  resolved "https://registry.yarnpkg.com/@razors/build-commit/-/build-commit-0.0.16.tgz#c241d42bb5a1eb13bba0e5e17af9b7455c4f80ba"
+
 "@rollup/plugin-babel@^5.0.4":
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-babel/-/plugin-babel-5.2.0.tgz#b87556d61ed108b4eaf9d18b5323965adf8d9bee"
