@@ -7,10 +7,8 @@
   "author": "liujia02 <bit_liujia@163.com>",
   "license": "MIT",
   "devDependencies": {
-    "@razors/build-commit": "*",
+    "@razors/build-commit": "^0.0.16",
     "@razors/build-jest": "*",
-    "commitizen": "^4.1.2",
-    "cz-conventional-changelog": "^3.2.0",
     "lerna": "^3.22.1",
     "shipjs": "0.20.1",
     "typescript": "^3.9.5"
