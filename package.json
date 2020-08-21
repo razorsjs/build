@@ -7,7 +7,7 @@
   "author": "liujia02 <bit_liujia@163.com>",
   "license": "MIT",
   "devDependencies": {
-    "@razors/build-commit": "^0.0.16",
+    "@razors/build-commit": "*",
     "@razors/build-jest": "*",
     "lerna": "^3.22.1",
     "shipjs": "0.20.1",
