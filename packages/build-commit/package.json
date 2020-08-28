@@ -1,6 +1,6 @@
 {
   "name": "@razors/build-commit",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.cjs.js",
   "license": "MIT",
