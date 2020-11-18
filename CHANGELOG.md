@@ -1,6 +1,10 @@
 # [](https://github.com/razorsjs/build/compare/v0.0.18...v) (2020-11-18)
 
 
+
+# [](https://github.com/razorsjs/build/compare/v0.0.18...v) (2020-11-18)
+
+
 ### Bug Fixes
 
 * **deps:** update dependency @rollup/plugin-commonjs to v16 ([#20](https://github.com/razorsjs/build/issues/20)) ([d96191a](https://github.com/razorsjs/build/commit/d96191a7aae28a2879aa2e351abe9638a476336b))
