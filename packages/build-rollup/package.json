@@ -1,6 +1,6 @@
 {
   "name": "@razors/build-rollup",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.cjs.js",
   "license": "MIT",
