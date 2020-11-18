@@ -8,10 +8,12 @@
   "author": "liujia02 <bit_liujia@163.com>",
   "dependencies": {
     "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.12.5",
     "@rollup/plugin-babel": "^5.0.4",
     "@rollup/plugin-commonjs": "^15.0.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^9.0.0",
+    "@vue/babel-preset-app": "^4.5.9",
     "rollup": "^2.18.0",
     "rollup-plugin-css-only": "^2.1.0",
     "rollup-plugin-node-externals": "^2.2.0",

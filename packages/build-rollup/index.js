@@ -60,6 +60,8 @@ const defaultOptions = {
   useTypescript: true,
   // use SFC vue
   useVue: false,
+  // use react
+  useReact: false,
   exports: 'named',
   external: []
 }
@@ -69,7 +71,7 @@ export default function(pkg, options = defaultOptions, pluginOptions= {
 }) {
   options = merge(defaultOptions, options)
   let {name, dependencies} = pkg
-  const {target, useTypescript, useVue, exports} = options
+  const {target, useTypescript, useVue, useReact, exports} = options
   const {babel: babelOptions} = pluginOptions
 
   //TODO: check tsconfig.json
@@ -100,18 +102,25 @@ export default function(pkg, options = defaultOptions, pluginOptions= {
       ["@babel/preset-env", babelPresetOptions]
   ];
 
+  const babelPlugins = [];
+
   const _babelOptions = {
     babelrc: false,
     configFile: false,
     babelHelpers: 'bundled',
-    extensions: ['.js', '.tsx', '.ts'],
+    extensions: ['.js', '.tsx', '.ts', 'jsx'],
     presets,
+    plugins: babelPlugins
   }
 
   if(useVue) {
     _resolveOptions.extensions.push('.vue')
     _babelOptions.extensions.push('.vue')
     presets[0][0] = '@vue/babel-preset-app'
+  }
+
+  if(useReact) {
+    presets.push(["@babel/preset-react", {}])
   }
 
   const plugins = [
