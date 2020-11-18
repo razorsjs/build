@@ -1,3 +1,19 @@
+# [](https://github.com/razorsjs/build/compare/v0.0.18...v) (2020-11-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @rollup/plugin-commonjs to v16 ([#20](https://github.com/razorsjs/build/issues/20)) ([d96191a](https://github.com/razorsjs/build/commit/d96191a7aae28a2879aa2e351abe9638a476336b))
+* **deps:** update dependency @rollup/plugin-node-resolve to v10 ([#21](https://github.com/razorsjs/build/issues/21)) ([1f5beff](https://github.com/razorsjs/build/commit/1f5beffa0b7b9d17cdc9bce1cc0a7452ae35a222))
+* **deps:** update dependency rollup-plugin-typescript2 to ^0.29.0 ([#19](https://github.com/razorsjs/build/issues/19)) ([7f1d197](https://github.com/razorsjs/build/commit/7f1d197d6c85022e482efc332f55450595cb3c37))
+
+
+### Features
+
+* **rollup:** support react ([2690e8b](https://github.com/razorsjs/build/commit/2690e8b31f89cc41cb333a95d4b7d8d439dea3dd))
+
+
+
 # [](https://github.com/razorsjs/build/compare/v0.0.17...v) (2020-08-28)
 
 
