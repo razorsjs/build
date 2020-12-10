@@ -10,7 +10,7 @@
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.12.5",
     "@rollup/plugin-babel": "^5.0.4",
-    "@rollup/plugin-commonjs": "^16.0.0",
+    "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^10.0.0",
     "@vue/babel-preset-app": "^4.5.9",
