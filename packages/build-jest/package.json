@@ -7,7 +7,7 @@
   "repository": "https://github.com/razorsjs/build",
   "author": "liujia02 <bit_liujia@163.com>",
   "dependencies": {
-    "@types/jest": "^26.0.9",
+    "@types/jest": "^27.0.0",
     "babel-jest": "^26.1.0",
     "jest": "^26.1.0",
     "ts-jest": "^26.2.0",
