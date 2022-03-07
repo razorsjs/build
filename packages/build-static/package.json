@@ -10,7 +10,7 @@
     "bs": "dist/index.cjs.js"
   },
   "dependencies": {
-    "chalk": "^4.1.0",
+    "chalk": "^5.0.0",
     "commander": "^6.0.0"
   }
 }
