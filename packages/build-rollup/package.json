@@ -13,7 +13,7 @@
     "@rollup/plugin-commonjs": "^16.0.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^10.0.0",
-    "@vue/babel-preset-app": "^4.5.9",
+    "@vue/babel-preset-app": "^5.0.0",
     "rollup-plugin-css-only": "^2.1.0",
     "rollup-plugin-node-externals": "^2.2.0",
     "rollup-plugin-preserve-shebang": "^1.0.1",
