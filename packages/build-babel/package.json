@@ -5,7 +5,7 @@
   "module": "./dist/index.cjs.js",
   "license": "MIT",
   "dependencies": {
-    "@vue/babel-preset-app": "^4.4.5"
+    "@vue/babel-preset-app": "^5.0.0"
   },
   "repository": "https://github.com/razorsjs/build",
   "author": "liujia02 <bit_liujia@163.com>"
